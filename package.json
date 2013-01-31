@@ -1,8 +1,12 @@
 {
   "name": "passport-signature",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Signature authentication strategy for Passport.",
-  "author": { "name": "Daniel Lochrie", "url": "http://github.com/dlochrie", "email": "daniel.lochrie@bcm.edu" },
+  "author": {
+    "name": "Daniel Lochrie",
+    "email": "daniel.lochrie@bcm.edu",
+    "url": "http://github.com/dlochrie"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/dlochrie/passport-signature.git"
@@ -13,15 +17,33 @@
   "main": "./lib/passport-signature",
   "dependencies": {
     "pkginfo": "0.2.x",
-    "passport-oauth": "~0.1.2"
+    "passport-oauth": "~0.1.2",
+    "cjson": ">=0.2.1"
   },
   "devDependencies": {
     "vows": "0.6.x"
   },
-  "engines": { "node": ">= 0.4.0" },
-  "licenses": [ {
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/MIT" 
-  } ],
-  "keywords": ["passport", "signature", "auth", "authn", "authentication", "identity"]
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "keywords": [
+    "passport",
+    "signature",
+    "auth",
+    "authn",
+    "authentication",
+    "identity"
+  ],
+  "readme": "# Passport-Signature\n\n## Usage\nAdd \"passport-signature\" to your `package.json` file. Then, `(sudo) npm install -l`.\n\n## Config\nIn the latest version, this module has been updated to use an `app` variable for the URLs for the \nSignature OAuth app. You can do something like:  \n\n    app.set('sigAuthDomain', 'http://localhost...')\n\nThe _only_ reason that you would want to do this is if you were testing OAuth against another OAuth Server.\nIf in doubt, don't set the `app` variable above.\n\n## Notes\nTested against the `example` project in [this](https://github.com/jaredhanson/oauth2orize) OAUTH2 provider repo.\n\n###Thanks \n[Jared Hanson](https://github.com/jaredhanson/)\n\n###License \nMIT\n",
+  "_id": "passport-signature@0.0.4",
+  "dist": {
+    "shasum": "10cdac3bdb594f40a77f4995ce526be419fe4642"
+  },
+  "_from": "passport-signature@*"
 }
