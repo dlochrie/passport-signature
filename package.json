@@ -1,6 +1,6 @@
 {
   "name": "passport-signature",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Signature authentication strategy for Passport.",
   "author": {
     "name": "Daniel Lochrie",
@@ -40,7 +40,6 @@
     "authentication",
     "identity"
   ],
-  "readme": "# Passport-Signature\n\n## Usage\nAdd \"passport-signature\" to your `package.json` file. Then, `(sudo) npm install -l`.\n\n## Config\nIn the latest version, this module has been updated to use an `app` variable for the URLs for the \nSignature OAuth app. You can do something like:  \n\n    app.set('sigAuthDomain', 'http://localhost...')\n\nThe _only_ reason that you would want to do this is if you were testing OAuth against another OAuth Server.\nIf in doubt, don't set the `app` variable above.\n\n## Notes\nTested against the `example` project in [this](https://github.com/jaredhanson/oauth2orize) OAUTH2 provider repo.\n\n###Thanks \n[Jared Hanson](https://github.com/jaredhanson/)\n\n###License \nMIT\n",
   "_id": "passport-signature@0.0.4",
   "dist": {
     "shasum": "10cdac3bdb594f40a77f4995ce526be419fe4642"
