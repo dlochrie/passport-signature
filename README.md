@@ -4,36 +4,24 @@
 Add "passport-signature" to your `package.json` file. Then, `(sudo) npm install -l`.
 
 ## Config
-Create a new json file in your config directory:
 
-    /
-    --/config/
-      --passport.json
+Following thr Passport Strategy conventions, your settings should look like:
 
-And the file should look like this:
-
-    {
-      "development": { 
-          "host": "http://www.signature.com"
-        , "path": "/"
-        , "signature": {
-            "host": "http://sigauth-dev.ad.bcm.edu"
-          , "path": "/"
-          , "license": "abc123"
-          , "secret": "ssh-secret"
-        }
-      },
-      "qa": { 
-        "host":   "http://qa.sigui.signature.com"
-      , "path":   "/"
-      , "signature": {
-            "host": "http://sigauth-dev.ad.bcm.edu"
-          , "path": "/"
-          , "license": "abc123"
-          , "secret": "ssh-secret"
-        }
-      }
-    }
+    // Signature Strategy
+    passport.use(new SignatureStrategy({
+      clientID: 'your-license',
+      clientSecret: 'your-secret',
+      callbackURL: 'http://your.app.com/auth/signature/return',
+      providerURL: 'https://auth.signature.com/',
+      profileURL: 'https://auth.signature.com/api/userinfo'
+    }, function (token, tokenSecret, profile, done) {
+      compound.models.User.findOrCreate({
+        signatureId: profile.id,
+        profile: profile
+      }, function (err, user) {
+        done(err, user);
+      });
+    }));
 
 ..etc.
 
