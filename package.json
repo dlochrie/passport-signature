@@ -1,12 +1,14 @@
 {
   "name": "passport-signature",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Signature authentication strategy for Passport.",
   "author": {
     "name": "Daniel Lochrie",
-    "email": "daniel.lochrie@bcm.edu",
     "url": "http://github.com/dlochrie"
   },
+	"contributors": [
+		{"name": "Daniel Purdy"}
+	],
   "repository": {
     "type": "git",
     "url": "git://github.com/dlochrie/passport-signature.git"
